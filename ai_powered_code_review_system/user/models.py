@@ -21,3 +21,12 @@ class User(models.Model):
         null=True, blank=True,
         verbose_name=_("Confirm Password")
     )
+    
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+    
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+    

@@ -20,12 +20,15 @@ class SelectLanguage(models.Model):
     )
     
 class CodeReviewSelection(models.Model):
-    options = models.CharField(
+    review_type = models.CharField(
         max_length=10, verbose_name=_('Options'),
         choices=Options.choices(), default=Options.Styling
     ) 
     user = models.ForeignKey(
         User, on_delete=models.CASCADE,
         related_name='code_review_selection'
+    )
+    
+    
     
     
