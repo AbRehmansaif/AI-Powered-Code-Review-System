@@ -15,6 +15,7 @@ class CustomUserAdmin(UserAdmin):
         'updated_at'
     )
     
+    
     search_fields = ('user_name', 'email')
 
     fieldsets = (
