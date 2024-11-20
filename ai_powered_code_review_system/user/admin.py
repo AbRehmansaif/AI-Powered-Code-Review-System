@@ -13,8 +13,7 @@ class CustomUserAdmin(UserAdmin):
         'password_1', 'password_2',
         'is_active', 'created_at',
         'updated_at'
-    )
-    
+    ) 
     
     search_fields = ('user_name', 'email')
 
