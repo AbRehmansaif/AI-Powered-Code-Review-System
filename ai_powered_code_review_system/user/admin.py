@@ -1,36 +1,42 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import User
+# from .models import User
+from django.contrib.auth import get_user_model
 
+
+User = get_user_model() 
+
+try:
+    admin.site.unregister(User)
+except admin.sites.NotRegistered:
+    pass
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     
     list_display = (
-        'user_name', 'email', 
+        'username', 'email', 
         'first_name', 'last_name', 
-        'password_1', 'password_2',
-        'is_active', 'created_at',
-        'updated_at'
+        'is_active', 'date_joined'
     ) 
     
-    search_fields = ('user_name', 'email')
+    search_fields = ('username', 'email')
 
     fieldsets = (
-        (None, {'fields': ('user_name', 'email', 'password')}),
+        (None, {'fields': ('username', 'email', 'password')}),
         (_('Personal Info'), {
             'fields': ('first_name', 'last_name')
         }),
         (_('Permissions'), {
-            'fields': (
+            'fields': [
                 'is_active'
-            )
+            ]
         }),
         (_('Important dates'), {
-            'fields': ('created_at', 'updated_at')
+            'fields': ['created_at', 'updated_at']
         }),
     )
     
 
-admin.site.register(User, CustomUserAdmin)
+# admin.site.register(User, CustomUserAdmin)
