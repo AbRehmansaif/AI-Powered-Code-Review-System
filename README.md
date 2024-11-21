@@ -1,18 +1,15 @@
-# AI-Powered-Code-Review-System
+# 💻 AI-Powered-Code-Review-System
 
 ![Current Version](https://img.shields.io/badge/version-v0.1-blue)
 ![GitHub contributors](https://img.shields.io/github/contributors/AbRehmansaif/README-Template)
 ![GitHub stars](https://img.shields.io/github/stars/AbRehmansaif/README-Template?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/AbRehmansaif/README-Template?style=social)
 
-## Project Summary
-- Select language
-- Select Framework
-- Your code
-- Issues Found
-- Issues Fixed
-- Correct Code
-- Execution Time
+## 🛠️ Features
+- Automated code review for multiple programming languages.
+- Error detection and code corrections.
+- Support for various frameworks and libraries.
+- Detailed performance reports with execution time.
 
 ### </> Built With
 
@@ -22,7 +19,8 @@
 
 
 ---
-## 💻Run this project
+## 🚀 Getting Started with the Project
+## Clone the Repository:
 
 Linux and macOS:
 
@@ -38,47 +36,54 @@ git clone https://github.com/AbRehmansaif/AI-Powered-Code-Review-System.git
 
 To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
 
+## Set up a Python Virtual Environment:
 Windows:
 ```
-python -m venv venv
+python -m venv env
 ```
-Linux:
+Linux and macOS:
 ```
-python3 -m venv myenv
-```
-
-Clone or download this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
-
-```
-virtualenv env
+python3 -m venv env
 ```
 
+## Activate the Virtual Environment:
 That will create a new folder `env` in your project directory. Next activate it with this command on Win/linux:
 
-Window:
+Window (Command Prompt or PowerShell):
 ```
-venv\Scripts\activate
+env\Scripts\activate
 ```
-Linux
+Linux and macOS:
 ```
 source env/bin/active
 ```
-CMD to Deactivate `env`
+## Deactivate the Virtual Environment:`env`
 ```
 deactivate
 ```
-Then install the project dependencies with
+## Install Project Dependencies:
 
 ```
 pip install -r requirements.txt
 ```
+## Create and Apply Database Migrations:
+**Step 1: Create Migration Files for Models:**
+```
+python manage.py makemigrations
+```
 
-Now you can run the project with this command
+**Step 2: Apply Migrations to Update the Database Schema:**
+```
+python manage.py migrate
+```
 
+## Run the Project:
+**Default Port (8000):**
 ```
 python manage.py runserver
 ```
-CMD to Run project on custom Port
+**Custom Port:**
+To run the project on a custom port, e.g., `9000`:
 
 ```
 python manage.py runserver 0.0.0.0:9000
@@ -102,13 +107,47 @@ which python
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Contributing
+## 🤝Contributing
+**We welcome contributions! Follow these steps to get started:**
 
-1. Fork it
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+**1.Fork the repository**
+
+Click on the `Fork` button at the top-right corner of this repository to create your copy.
+
+**2.Clone your forked repository**
+```
+git clone https://github.com/your-username/AI-Powered-Code-Review-System.git
+```
+```
+cd AI-Powered-Code-Review-System
+```
+**3.Create a new feature branch**
+```
+git checkout -b feature/your-feature-name
+```
+**4.Make your changes**
+
+Edit the codebase to implement your feature or fix.
+
+**5.Commit your changes**
+
+Use clear and concise commit messages.
+```
+git commit -m "Add [your feature or fix description]"
+```
+**6.Push your branch**
+```
+git push origin feature/your-feature-name
+```
+**7.Create a Pull Request**
+
+Open a pull request from your feature branch to the main repository. Provide a detailed explanation of the changes made.
+
+## 🤝 Support
+
+**⭐ Star the repository on GitHub**
+
+---
 
 ## Contact
 
