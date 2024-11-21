@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from user_code.models import CodeReviewSelection
-from user_code.enums import SeverityLevel
 
 
 class CodeReviewReport(models.Model):
