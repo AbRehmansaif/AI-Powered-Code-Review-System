@@ -16,12 +16,12 @@ class SelectLanguage(models.Model):
     
     pl = models.CharField(
         max_length=10, verbose_name=_('Programming Language'),
-        choices=Language.choices(), default=Language.Python
+        choices=Language.choices, default=Language.PY
     )
     
     framework = models.CharField(
         max_length=10, verbose_name=_('Programming Language'),
-        choices=Framework.choices(), default=Framework.Django
+        choices=Framework.choices, default=Framework.Django
     )
     
     created_at = models.DateTimeField(
@@ -44,7 +44,7 @@ class CodeReviewSelection(models.Model):
     
     review_type = models.CharField(
         max_length=10, verbose_name=_('Review Type'),   
-        choices=Options.choices(), default=Options.Styling
+        choices=Options.choices, default=Options.Styling
     ) 
     
     language = models.ForeignKey(
@@ -63,7 +63,7 @@ class CodeReviewSelection(models.Model):
     
     status = models.CharField(
         max_length=10, verbose_name=_('Status'),
-        choices=StatusOptions.choices(), default=StatusOptions.Styling
+        choices=StatusOptions.choices, default=StatusOptions.Processing
     )
     
     def __str__(self):
