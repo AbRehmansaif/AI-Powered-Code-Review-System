@@ -12,7 +12,7 @@
 - Detailed performance reports with execution time.
 
 ### </> Built With
-
+* ![Python](https://img.shields.io/badge/python-3.1%2B-blue?logo=python&logoColor=white)
 * ![Django][Django.com] - Backend Framework
 * ![Django Rest Framework][DRF.com] - API Framework for Django
 * ![GitHub][GitHub.com] - Version Control Platform
