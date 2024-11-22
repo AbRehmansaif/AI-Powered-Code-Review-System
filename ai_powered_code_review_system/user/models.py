@@ -8,11 +8,6 @@ class User(AbstractUser):
     class Meta:
         verbose_name = _("User")
         verbose_name_plural = _("Users")
-        
-    # user_name = models.CharField(
-    #     unique=True, max_length=150,
-    #     blank=True, verbose_name=_("Username")
-    # )
     
     email = models.EmailField(
         unique=True,
@@ -30,18 +25,6 @@ class User(AbstractUser):
         blank=True,
         verbose_name=_("Last Name")
     )
-    
-    # password_1 = models.CharField(
-    #     max_length=128,
-    #     null=True, blank=True,
-    #     verbose_name=_("Password")
-    # )
-    
-    # password_2 = models.CharField(
-    #     max_length=128,
-    #     null=True, blank=True,
-    #     verbose_name=_("Confirm Password")
-    # )
        
     is_active = models.BooleanField(
         default=True,
@@ -58,13 +41,13 @@ class User(AbstractUser):
     
     groups = models.ManyToManyField(
         Group,
-        related_name="custom_user_groups",  # Avoid the conflict with default User's related name
+        related_name="custom_user_groups", 
         blank=True,
     )
 
     user_permissions = models.ManyToManyField(
         Permission,
-        related_name="custom_user_permissions",  # Avoid the conflict with default User's related name
+        related_name="custom_user_permissions",
         blank=True,
     )
     
