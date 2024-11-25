@@ -16,7 +16,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return UserProfileSerializer
 
     def get_permissions(self):
-        if self.action == 'create':
+        if self.action in ['register', 'login', 'create']: 
             permission_classes = [AllowAny]
         else:
             permission_classes = [IsAuthenticated]
@@ -35,9 +35,9 @@ class UserViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['POST'], permission_classes=[AllowAny])
     def login(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=email, password=password)
         if user:
             login(request, user)
             return Response({

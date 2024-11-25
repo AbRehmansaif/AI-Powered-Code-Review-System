@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9+s9_twe-6te@*8dpph9+e^i4ctnp_oqgmngl5y-a&979+e*!&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'user_code',
     'result_code',
     
-    
+    'corsheaders',
     'rest_framework',
     
     
@@ -56,7 +56,26 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://<frontend_ip>:<frontend_port>",  # Replace with your frontend's IP and port
+    "http://localhost:3000",  # For React/Next.js running locally
+]
+
+CORS_ALLOW_CREDENTIALS = True  # For cookies/session-based auth
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',  # Add your frontend's origin
+#     'https://yourfrontenddomain.com',
+# ]
+
+# Allow credentials if using session authentication
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'ai_powered_code_review_system.urls'
 
