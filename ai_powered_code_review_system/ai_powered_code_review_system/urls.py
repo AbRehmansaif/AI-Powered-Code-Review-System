@@ -19,11 +19,17 @@ from django.contrib import admin
 from django.urls import path, include
 from user.v2 import urls as user_urls
 from result_code.v2 import urls as result_code_urls
+from rest_framework_simplejwt.views import (
+    TokenObtainSlidingView,
+    TokenRefreshSlidingView,
+)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include(user_urls)),
     path('result_code/', include(result_code_urls)),
-    path('', include('storefront.urls')),
+    
+    path('api/token/', TokenObtainSlidingView.as_view(), name='token_obtain'),
+    path('api/token/refresh/', TokenRefreshSlidingView.as_view(), name='token_refresh'),
 ]

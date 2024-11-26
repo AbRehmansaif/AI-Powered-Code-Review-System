@@ -52,3 +52,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'id',
             'is_active', 'created_at'
         )
+        
+# class LoginSerializer(serializers.Serializer):
+#     username = serializers.CharField()
+#     password = serializers.CharField()
+    
+    
