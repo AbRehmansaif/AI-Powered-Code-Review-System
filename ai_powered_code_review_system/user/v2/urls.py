@@ -10,6 +10,6 @@ urlpatterns = [
 
 
     path('auth/register/', UserViewSet.as_view({'post': 'register'}), name='user-register'),
-    path('auth/login/', UserViewSet.as_view({'post': 'login'}), name='user-login'),
+    # path('auth/login/', LoginAPI.as_view(), name='user-login'),
     path('auth/logout/', UserViewSet.as_view({'post': 'logout'}), name='user-logout'),
 ]

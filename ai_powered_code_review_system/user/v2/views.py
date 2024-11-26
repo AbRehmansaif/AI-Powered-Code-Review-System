@@ -5,6 +5,42 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import authenticate, login, logout
 from user.models import User
 from user.v2.serializers import UserRegistrationSerializer, UserProfileSerializer
+from django.contrib.auth import authenticate
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+
+# class LoginAPI(APIView):
+#     def post(self, request):
+#         try:
+#             data = request.data
+#             serializer = LoginSerializer(data = data)
+#             if serializer.is_valid():
+#                 email = serializer.validated_data['email']
+#                 password = serializer.validated_data['password']
+                
+#                 user = authenticate(email = email, password = password)
+#                 if user is None:
+#                     return Response({
+#                         'status' : 400,
+#                         'message' : 'Invalid Password',
+#                         'data' : {}
+#                     })
+#                 refresh = RefreshToken.for_user(user)
+
+#                 return {
+#                     'refresh': str(refresh),
+#                     'access': str(refresh.access_token),
+#                 }
+     
+                
+#             return Response({
+#                 'status' : 400,
+#                 'message' : 'Invalid credentials',
+#                 'data' : serializer.errors
+#             })
+            
+#         except Exception as e:
+#             print(e)
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
